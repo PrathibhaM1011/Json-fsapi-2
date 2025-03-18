@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Form Container */
+.form-container {
+    background: white;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+    margin: 20px 0;
+}
+
+/* Input Fields */
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    border-color: #007BFF;
+}
+
+/* Add Button */
+#btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#btn:hover {
+    background-color: #0056b3;
+}
+
+/* Product List - Grid Layout */
+#container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Ensures 4 items per row */
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 20px;
+    width: 90%;
+}
+
+/* Individual Product Item */
+.item {
+    background: white;
+    padding: 15px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Product Image */
+.image {
+    width: 100%;
+            height: 250px;
+            object-fit: contain;
+            background-color: #fff;
+            padding: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .image:hover  {
+            transform: scale(1.1);
+        }
+
+/* Title */
+.title {
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 5px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* Description */
+.description {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Truncate if too long */
+}
+
+/* Price */
+.price {
+    font-size: 16px;
+    color: red;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.price:before {
+    content: "₹ "; /* Adds rupee symbol */
+}
+
+/* Category */
+.category {
+    font-size: 14px;
+    color: #555;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Delete Button */
+button {
+    background-color: #DC3545;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #c82333;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    #container {
+        grid-template-columns: repeat(3, 1fr); /* 3 items per row for tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    #container {
+        grid-template-columns: repeat(2, 1fr); /* 2 items per row for mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    #container {
+        grid-template-columns: repeat(1, 1fr); /* 1 item per row for small screens */
+    }
+}
+
+ 
+
+
+    </style>
+</head>
+
+<body>
+    
+
+    <div class="form-container">
+        <h2>Add Product</h2>
+        <input type="text" id="title" placeholder="Enter Product Title">
+        <input type="number" id="price" placeholder="Enter Price">
+        <input type="text" id="description" placeholder="Enter Description">
+        <input type="text" id="category" placeholder="Enter Category">
+        <input type="number" id="rating" placeholder="Enter Rating">
+        <input type="text" id="imageURL" placeholder="Image URL"> 
+
+        <button id="btn">Add Product</button>
+    </div>
+    
+    <!-- Container for displaying products -->
+    <div id="container"></div>
+    
+   
+    <script src="./task3.js"></script>
+</body>
+
+</html>
